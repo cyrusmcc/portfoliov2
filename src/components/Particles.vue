@@ -20,10 +20,10 @@ export default {
       window.particlesJS("particle-container", {
         particles: {
           number: {
-            value: 33,
+            value: 160,
             density: {
               enable: true,
-              value_area: 157.82952832645452,
+              value_area: 800,
             },
           },
           color: {
@@ -36,7 +36,7 @@ export default {
               color: "#000000",
             },
             polygon: {
-              nb_sides: 3,
+              nb_sides: 5,
             },
             image: {
               src: "img/github.svg",
@@ -45,22 +45,22 @@ export default {
             },
           },
           opacity: {
-            value: 0.45770563214671817,
+            value: 1,
             random: true,
             anim: {
-              enable: false,
+              enable: true,
               speed: 1,
-              opacity_min: 0.1,
+              opacity_min: 0,
               sync: false,
             },
           },
           size: {
-            value: 3.945738208161363,
+            value: 5,
             random: true,
             anim: {
               enable: false,
-              speed: 40,
-              size_min: 0.1,
+              speed: 4,
+              size_min: 0.3,
               sync: false,
             },
           },
@@ -73,16 +73,16 @@ export default {
           },
           move: {
             enable: true,
-            speed: 2,
-            direction: "bottom-right",
+            speed: 0,
+            direction: "none",
             random: true,
             straight: false,
             out_mode: "out",
             bounce: false,
             attract: {
               enable: false,
-              rotateX: 600,
-              rotateY: 1200,
+              rotateX: 552.4033491425909,
+              rotateY: 600,
             },
           },
         },
@@ -95,7 +95,7 @@ export default {
             },
             onclick: {
               enable: true,
-              mode: "remove",
+              mode: "repulse",
             },
             resize: true,
           },
@@ -103,18 +103,18 @@ export default {
             grab: {
               distance: 400,
               line_linked: {
-                opacity: 0,
+                opacity: 1,
               },
             },
             bubble: {
-              distance: 527.4725274725275,
+              distance: 250,
               size: 0,
               duration: 2,
-              opacity: 0.2,
+              opacity: 0,
               speed: 3,
             },
             repulse: {
-              distance: 200,
+              distance: 400,
               duration: 0.4,
             },
             push: {
@@ -134,6 +134,8 @@ export default {
 
 <style scoped lang="scss">
 #particle-container {
+  position: absolute;
+  top: 0;
   background: $primaryDark;
   height: 100%;
 }
