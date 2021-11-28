@@ -1,0 +1,153 @@
+<template>
+  <div id="particle-container"></div>
+</template>
+
+<script>
+import "particles.js";
+
+export default {
+  name: "Particles",
+  data() {
+    return {};
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.initParticleJS();
+    });
+  },
+  methods: {
+    initParticleJS() {
+      window.particlesJS("particle-container", {
+        particles: {
+          number: {
+            value: 33,
+            density: {
+              enable: true,
+              value_area: 157.82952832645452,
+            },
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+            polygon: {
+              nb_sides: 3,
+            },
+            image: {
+              src: "img/github.svg",
+              width: 100,
+              height: 100,
+            },
+          },
+          opacity: {
+            value: 0.45770563214671817,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false,
+            },
+          },
+          size: {
+            value: 3.945738208161363,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: false,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "bottom-right",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "bubble",
+            },
+            onclick: {
+              enable: true,
+              mode: "remove",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 0,
+              },
+            },
+            bubble: {
+              distance: 527.4725274725275,
+              size: 0,
+              duration: 2,
+              opacity: 0.2,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    },
+  },
+};
+</script>
+
+<style scoped lang="scss">
+#particle-container {
+  background: $primaryDark;
+  height: 100%;
+}
+
+.particles-js-canvas-el {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  top: 0;
+
+  background-color: black;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+</style>
