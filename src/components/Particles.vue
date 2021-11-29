@@ -142,9 +142,9 @@ export default {
           size: {
             random: {
               enable: true,
-              minimumValue: 0.9,
+              minimumValue: 1.5,
             },
-            value: 8,
+            value: 10,
           },
         },
       },
