@@ -31,16 +31,18 @@ export default {
   width: 90%;
   border-radius: 4px;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .card {
-  background: rgba(18, 17, 19, 0.9);
+  @include flexCenter();
+  background: rgba(18, 17, 19, 0.5);
   color: #f4f4f3;
   position: relative;
   height: 100%;
   width: 100%;
   box-shadow: 0 4px 8px 0 RGB(0 0 0/20%), 0 6px 20px 0 RGB(0 0 0/19%);
-  border: 5px solid;
+  border: 3px solid $primaryDark;
   box-sizing: border-box;
   border-image: conic-gradient(
       from var(--angle),
@@ -53,7 +55,7 @@ export default {
       #83b341,
       #e7b614
     )
-    1 / 5px;
+    1 / 3px;
   animation: 10s rotate linear infinite;
 }
 </style>

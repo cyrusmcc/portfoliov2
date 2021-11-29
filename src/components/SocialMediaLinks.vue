@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div class="parent">
     <div class="portraitContainer">
       <img
         class="portrait"
-        src="@/assets/imgs/portrait.jpg"
+        src="@/assets/imgs/portrait.webp"
         alt="Portrait of me"
       />
     </div>
@@ -89,44 +89,56 @@ export default {};
 </script>
 
 <style scoped lang="scss">
-.portraitContainer {
+.parent {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+  height: 80%;
+}
+
+.portraitContainer {
+  @include flexCenter();
   z-index: 3;
   border-radius: 50%;
-  height: 7.5rem;
-  width: 7.5rem;
+  height: 8rem;
+  width: 8rem;
   overflow: hidden;
-  box-shadow: -1px 1px 18px -2px rgba(15, 15, 15, 0.08);
+  box-shadow: $shadow;
 }
 .portrait {
-  width: 74px;
-  height: 74px;
+  width: inherit;
+  height: inherit;
   object-fit: cover;
   float: left;
+}
+
+.socialLinkContainer {
+  border: thin solid $primaryLight;
+  border-radius: 20px;
 }
 
 .link-box {
   display: flex;
   align-items: center;
   background-color: transparent;
-  align-items: center;
-  padding: 0 0.8em 0 0.2em;
-  margin: 0 0.2em 0 0.2em;
-  border-radius: 4px;
+  padding: 0.1rem 0.8em 0.1rem 0.2em;
   height: 2.2em;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.link-box:not(:last-child) {
+  border-bottom: thin solid $primaryLight;
 }
 
 .link-box-img-cont {
+  @include flexCenter();
   background-color: transparent;
   height: 1.6em;
   width: 1.6em;
   border-radius: 4px;
   margin: 0.2em 0.4em 0.2em 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .link-box-img {
@@ -136,7 +148,7 @@ export default {};
 }
 
 .linkLabel {
-  font-size: 0.8em;
+  font-size: 1em;
   margin: 0 0.2em 0 0.2em;
   color: $primaryLight;
 }
