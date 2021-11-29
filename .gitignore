@@ -17,13 +17,13 @@ test/
 # Recommended template: Node.gitignore
 
 node_modules/
-dist/
+#dist/
 npm-debug.log
 yarn-error.log
 
 .DS_Store
 node_modules
-/dist
+#/dist
 
 
 # local env files

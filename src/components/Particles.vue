@@ -3,13 +3,16 @@
 </template>
 
 <script>
+var img = new Image();
+img.src = '@/assets/imgs/circle.png';
+
 export default {
   name: "ParticleBackground",
   data() {
     return {
       ParticlesConfig: {
         background: {
-          color: "#000",
+          color: "#000000",
           opacity: 0,
         },
         detectRetina: false,
@@ -19,7 +22,7 @@ export default {
           events: {
             onclick: { enable: true, mode: "repulse" },
             onhover: {
-              enable: true,
+              enable: false,
               mode: "bubble",
               parallax: { enable: false, force: 2, smooth: 10 },
             },
@@ -49,7 +52,7 @@ export default {
               area: 1080,
             },
             limit: 0,
-            value: 250,
+            value: 200,
           },
           move: {
             attract: { enable: false, rotateX: 600, rotateY: 600 },
@@ -58,7 +61,7 @@ export default {
             enable: true,
             out_mode: "out",
             random: true,
-            speed: 0.3,
+            speed: 0.4,
             straight: false,
           },
           opacity: {
@@ -151,12 +154,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
 #tsparticles {
-  height: 100%;
-  width: 100%;
   position: absolute;
+  width: 100%;
+  height: 100%;
   background: black url("../assets/imgs/noisytexture.png") repeat;
-  top: 0;
 }
 
 .tsparticles-canvas-el {

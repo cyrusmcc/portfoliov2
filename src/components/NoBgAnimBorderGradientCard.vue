@@ -44,6 +44,7 @@ export default {
   box-shadow: 0 4px 8px 0 RGB(0 0 0/20%), 0 6px 20px 0 RGB(0 0 0/19%);
   border: 3px solid $primaryDark;
   box-sizing: border-box;
+  overflow: hidden;
   border-image: conic-gradient(
       from var(--angle),
       #e7b614,
@@ -57,5 +58,12 @@ export default {
     )
     1 / 3px;
   animation: 10s rotate linear infinite;
+}
+
+@include screen-md() {
+  .cardWrapper {
+    height: 38rem;
+    width: 38rem;
+  }
 }
 </style>

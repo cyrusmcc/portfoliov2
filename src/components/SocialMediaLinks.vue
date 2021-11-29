@@ -1,6 +1,7 @@
 <template>
   <div class="parent">
-    <div class="portraitContainer">
+    <div class="portraitWrapper">
+      <img class="blob" src="@/assets/imgs/blob.svg" alt="blob accent" />
       <img
         class="portrait"
         src="@/assets/imgs/portrait.webp"
@@ -96,34 +97,49 @@ export default {};
 .parent {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  row-gap: 20px;
   align-items: center;
   height: 80%;
 }
 
-.portraitContainer {
+.portraitWrapper {
+  position: relative;
   @include flexCenter();
-  z-index: 3;
-  border-radius: 50%;
-  height: 8rem;
-  width: 8rem;
-  overflow: hidden;
-  box-shadow: $shadow;
 }
+
+.blob {
+  position: absolute;
+  z-index: 2;
+  width: 144%;
+  height: auto;
+  opacity: 0.9;
+  transform: rotate(321deg);
+}
+
 .portrait {
-  width: inherit;
-  height: inherit;
+  position: relative;
+  z-index: 2;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
   object-fit: cover;
-  float: left;
+  object-position: center right;
+  box-shadow: $shadow;
 }
 
 .id {
   display: flex;
   flex-direction: column;
   text-align: center;
-  row-gap: 10px;
+  row-gap: 5px;
   font-family: $spacegrotesk;
   font-size: 1.5rem;
+}
+
+.role {
+  border-bottom: thin solid $primaryLight;
+  padding-bottom: 5px;
 }
 
 .socialLinkContainer {
