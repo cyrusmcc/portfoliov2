@@ -1,23 +1,26 @@
 <template>
-  <div class="card">
-    <h3>Card</h3>
+  <div class="container">
+    <no-bg-anim-border-gradient-card>
+      <social-media-links></social-media-links>
+    </no-bg-anim-border-gradient-card>
   </div>
 </template>
 
 <script>
-export default {};
+import SocialMediaLinks from "@/components/SocialMediaLinks.vue";
+import NoBgAnimBorderGradientCard from "@/components/NoBgAnimBorderGradientCard.vue";
+
+export default {
+  name: "PersonalInfo",
+  components: {
+    SocialMediaLinks,
+    NoBgAnimBorderGradientCard,
+  },
+};
 </script>
 
 <style scoped lang="scss">
-.card {
-  background-color: rgba(18, 17, 19, 90%);
-  color: $primaryLight;
-  border-radius: 4px;
-  position: relative;
-  height: 90%;
-  width: 90%;
-  border: thick solid $primaryDark;
-  padding-bottom: 5px;
-  box-shadow: $shadow;
+.container {
+  @include flexCenter();
 }
 </style>
