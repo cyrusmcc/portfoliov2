@@ -52,7 +52,7 @@ export default {
               area: 1080,
             },
             limit: 0,
-            value: 200,
+            value: 180,
           },
           move: {
             attract: { enable: false, rotateX: 600, rotateY: 600 },
@@ -68,7 +68,7 @@ export default {
             animation: {
               enable: true,
               minimumValue: 0.25,
-              speed: 0.75,
+              speed: 2,
               sync: false,
             },
             random: {

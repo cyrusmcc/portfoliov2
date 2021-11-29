@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "NoBgAnimBorderGradientCard",
+  name: "Card",
 };
 </script>
 
@@ -32,6 +32,7 @@ export default {
   border-radius: 4px;
   overflow: hidden;
   pointer-events: none;
+  box-shadow: $shadow;
 }
 
 .card {

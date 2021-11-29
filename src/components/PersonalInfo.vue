@@ -1,20 +1,33 @@
 <template>
   <div class="container">
-    <no-bg-anim-border-gradient-card>
-      <social-media-links></social-media-links>
-    </no-bg-anim-border-gradient-card>
+    <card>
+      <social-media-links @view="updateView" v-if="view == 'default'"></social-media-links>
+      <about-me @view="updateView" v-if="view == 'aboutme'"></about-me>
+    </card>
   </div>
 </template>
 
 <script>
 import SocialMediaLinks from "@/components/SocialMediaLinks.vue";
-import NoBgAnimBorderGradientCard from "@/components/NoBgAnimBorderGradientCard.vue";
+import Card from "@/components/Card.vue";
+import AboutMe from '@/components/AboutMe.vue';
 
 export default {
   name: "PersonalInfo",
   components: {
     SocialMediaLinks,
-    NoBgAnimBorderGradientCard,
+    Card,
+    AboutMe,
+  },
+  data() {
+    return {
+      view: "default",
+    }
+  },
+  methods: {
+    updateView(view) {
+      this.view = view;
+    },
   },
 };
 </script>

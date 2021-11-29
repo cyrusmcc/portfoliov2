@@ -1,19 +1,12 @@
 <template>
   <div class="parent">
-    <div class="portraitWrapper">
-      <img class="blob" src="@/assets/imgs/blob.svg" alt="blob accent" />
-      <img
-        class="portrait"
-        src="@/assets/imgs/portrait.webp"
-        alt="Portrait of me"
-      />
-    </div>
+    <portrait></portrait>
     <div class="id">
       <span class="name">Cyrus McCormick</span>
       <span class="role">Fullstack Developer</span>
     </div>
     <div class="socialLinkContainer">
-      <a class="link-box link" href="">
+      <a class="link-box link" href="javascript:void(0)" @click="onClickAboutMe">
         <div class="link-box-img-cont">
           <img
             class="link-box-img"
@@ -23,7 +16,7 @@
         </div>
         <p class="linkLabel">about me</p>
       </a>
-      <a class="link-box link" href="">
+      <a class="link-box link" href="javascript:void(0)" @click="onClickAboutMe">
         <div class="link-box-img-cont">
           <img
             class="link-box-img"
@@ -90,7 +83,22 @@
 </template>
 
 <script>
-export default {};
+import Portrait from "@/components/Portrait.vue";
+
+export default {
+  name: "SocialMediaLinks",
+  components: {
+    Portrait
+  },
+  methods: {
+    onClickAboutMe() {
+      this.$emit("view", "aboutme");
+    },
+    onClickProjects() {
+      this.$emit("view", "projects");
+    },
+  }
+};
 </script>
 
 <style scoped lang="scss">
@@ -100,32 +108,7 @@ export default {};
   justify-content: center;
   row-gap: 20px;
   align-items: center;
-  height: 80%;
-}
-
-.portraitWrapper {
-  position: relative;
-  @include flexCenter();
-}
-
-.blob {
-  position: absolute;
-  z-index: 2;
-  width: 144%;
-  height: auto;
-  opacity: 0.9;
-  transform: rotate(321deg);
-}
-
-.portrait {
-  position: relative;
-  z-index: 2;
-  width: 125px;
-  height: 125px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center right;
-  box-shadow: $shadow;
+  height: 100%;
 }
 
 .id {
@@ -135,6 +118,7 @@ export default {};
   row-gap: 5px;
   font-family: $spacegrotesk;
   font-size: 1.5rem;
+  text-shadow: -4px 3px 11px black;
 }
 
 .role {
@@ -145,6 +129,7 @@ export default {};
 .socialLinkContainer {
   border: thin solid $primaryLight;
   border-radius: 20px;
+  box-shadow: $shadowLight;
 }
 
 .link-box {
