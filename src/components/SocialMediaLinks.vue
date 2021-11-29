@@ -7,6 +7,10 @@
         alt="Portrait of me"
       />
     </div>
+    <div class="id">
+      <span class="name">Cyrus McCormick</span>
+      <span class="role">Fullstack Developer</span>
+    </div>
     <div class="socialLinkContainer">
       <a class="link-box link" href="">
         <div class="link-box-img-cont">
@@ -111,6 +115,15 @@ export default {};
   height: inherit;
   object-fit: cover;
   float: left;
+}
+
+.id {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 10px;
+  font-family: $spacegrotesk;
+  font-size: 1.5rem;
 }
 
 .socialLinkContainer {
