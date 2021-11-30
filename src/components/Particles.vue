@@ -15,7 +15,7 @@ export default {
           color: "#000000",
           opacity: 0,
         },
-        detectRetina: false,
+        detectRetina: true,
         fpsLimit: 30,
         interactivity: {
           detect_on: "canvas",
@@ -52,7 +52,7 @@ export default {
               area: 1080,
             },
             limit: 0,
-            value: 180,
+            value: 85,
           },
           move: {
             attract: { enable: false, rotateX: 600, rotateY: 600 },
