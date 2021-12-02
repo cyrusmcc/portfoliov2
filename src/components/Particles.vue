@@ -3,9 +3,6 @@
 </template>
 
 <script>
-var img = new Image();
-img.src = '@/assets/imgs/circle.png';
-
 export default {
   name: "ParticleBackground",
   data() {
@@ -16,29 +13,14 @@ export default {
           opacity: 0,
         },
         detectRetina: true,
-        fpsLimit: 30,
+        fpsLimit: 20,
         interactivity: {
           detect_on: "canvas",
           events: {
-            onclick: { enable: true, mode: "repulse" },
-            onhover: {
-              enable: false,
-              mode: "bubble",
-              parallax: { enable: false, force: 2, smooth: 10 },
-            },
+            onclick: { enable: false, mode: "repulse" },
             resize: true,
           },
           modes: {
-            bubble: {
-              distance: 200,
-              duration: 2,
-              opacity: 0,
-              size: 0,
-              speed: 3,
-            },
-            grab: { distance: 400, line_linked: { opacity: 1 } },
-            push: { particles_nb: 4 },
-            remove: { particles_nb: 2 },
             repulse: { distance: 400, duration: 0.4 },
           },
         },
@@ -52,7 +34,7 @@ export default {
               area: 1080,
             },
             limit: 0,
-            value: 85,
+            value: 105,
           },
           move: {
             attract: { enable: false, rotateX: 600, rotateY: 600 },
@@ -61,7 +43,7 @@ export default {
             enable: true,
             out_mode: "out",
             random: true,
-            speed: 0.4,
+            speed: 0.35,
             straight: false,
           },
           opacity: {
@@ -142,9 +124,9 @@ export default {
           size: {
             random: {
               enable: true,
-              minimumValue: 1.5,
+              minimumValue: 2,
             },
-            value: 10,
+            value: 12,
           },
         },
       },
