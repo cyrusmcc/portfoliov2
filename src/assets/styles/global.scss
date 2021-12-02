@@ -1,5 +1,7 @@
 $primaryLight: #f4f4f3;
 $primaryDark: #121113;
+$primaryColor: #e98f17;
+$primaryHighlight: #e7b314;
 
 $screen-md: 610px;
 $screen-lg: 1115px;
@@ -87,3 +89,25 @@ th {
 .container {
     height: 100%;
 }
+
+.homeButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 15px;
+    pointer-events: all;
+    cursor: pointer;
+    background: none;
+    color: $primaryLight;
+    border-top: none;
+    border-right: none;
+    border-bottom: 2px solid $primaryColor;
+    border-left: none;
+    padding: 3px;
+    font-size: 1rem;
+}
+
+.homeButton:hover {
+    border-bottom: 3px solid $primaryHighlight;
+}
+

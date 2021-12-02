@@ -1,5 +1,6 @@
 <template>
   <div class="aboutMe">
+    <button class="homeButton" @click="onClickHome">Home</button>
     <portrait></portrait>
     <div class="skills">
       <span class="skillLabel">Skills</span>
@@ -40,6 +41,11 @@ import Portrait from "@/components/Portrait.vue";
 export default {
   name: "AboutMe",
   components: { Portrait },
+  methods: {
+    onClickHome() {
+      this.$emit("view", "default");
+    }
+  }
 };
 </script>
 

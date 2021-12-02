@@ -13,6 +13,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 @keyframes rotate {
   to {
     --angle: 360deg;

@@ -16,7 +16,7 @@
         </div>
         <p class="linkLabel">about me</p>
       </a>
-      <a class="link-box link" href="javascript:void(0)" @click="onClickAboutMe">
+      <a class="link-box link" href="javascript:void(0)" @click="onClickProjects">
         <div class="link-box-img-cont">
           <img
             class="link-box-img"
