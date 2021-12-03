@@ -1,6 +1,5 @@
 // vue.config.js
 module.exports = {
-  publicPath: "/cyrusmcc.github.io/",
   devServer: {
     port: 3000,
   },
