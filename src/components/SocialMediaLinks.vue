@@ -6,7 +6,7 @@
       <span class="role">Fullstack Developer</span>
     </div>
     <div class="socialLinkContainer">
-      <a class="link-box link" href="javascript:void(0)" @click="onClickAboutMe">
+      <router-link to="/aboutme" class="link-box link">
         <div class="link-box-img-cont">
           <img
             class="link-box-img"
@@ -15,8 +15,8 @@
           />
         </div>
         <p class="linkLabel">about me</p>
-      </a>
-      <a class="link-box link" href="javascript:void(0)" @click="onClickProjects">
+      </router-link>
+      <router-link to="projects" class="link-box link">
         <div class="link-box-img-cont">
           <img
             class="link-box-img"
@@ -25,9 +25,10 @@
           />
         </div>
         <p class="linkLabel">projects</p>
-      </a>
+      </router-link>
       <a
         class="link-box link"
+        rel="noopener noreferrer"
         href="https://drive.google.com/file/d/1-l4pgVrcBHjNPl0KcpfQs4SZdYzBWc1C/view"
         target="_blank"
       >
@@ -42,6 +43,7 @@
       </a>
       <a
         class="link-box link"
+        rel="noopener noreferrer"
         href="https://github.com/cyrusmcc"
         target="_blank"
       >
@@ -56,6 +58,7 @@
       </a>
       <a
         class="link-box link"
+        rel="noopener noreferrer"
         href="https://www.linkedin.com/in/cyrusmcc/"
         target="_blank"
       >
@@ -88,16 +91,8 @@ import Portrait from "@/components/Portrait.vue";
 export default {
   name: "SocialMediaLinks",
   components: {
-    Portrait
+    Portrait,
   },
-  methods: {
-    onClickAboutMe() {
-      this.$emit("view", "aboutme");
-    },
-    onClickProjects() {
-      this.$emit("view", "projects");
-    },
-  }
 };
 </script>
 
@@ -158,7 +153,7 @@ export default {
 .link-box-img {
   justify-content: left;
   height: 1em;
-  width: auto;
+  width: 1em;
 }
 
 .linkLabel {

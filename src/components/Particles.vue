@@ -34,7 +34,7 @@ export default {
               area: 1080,
             },
             limit: 0,
-            value: 105,
+            value: 100,
           },
           move: {
             attract: { enable: false, rotateX: 600, rotateY: 600 },
@@ -126,7 +126,7 @@ export default {
               enable: true,
               minimumValue: 2,
             },
-            value: 12,
+            value: 13,
           },
         },
       },

@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import Particles from 'particles.vue3';
+import router from "@/router/router.js";
+import Particles from "particles.vue3";
 
-
-createApp(App).use(Particles).mount("#app");
+createApp(App).use(router).use(Particles).mount("#app");

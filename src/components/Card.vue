@@ -13,7 +13,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 @keyframes rotate {
   to {
     --angle: 360deg;
@@ -28,8 +27,8 @@ export default {
 
 .cardWrapper {
   position: relative;
-  height: 90%;
-  width: 90%;
+  height: 95%;
+  width: 95%;
   border-radius: 4px;
   overflow: hidden;
   pointer-events: none;

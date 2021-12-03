@@ -1,25 +1,29 @@
 <template>
   <div class="container">
     <custom-particles></custom-particles>
-    <personal-info></personal-info>
+    <card> <router-view /> </card>
   </div>
 </template>
 
 <script>
 import CustomParticles from "@/components/Particles.vue";
-import PersonalInfo from "@/components/PersonalInfo.vue";
+import Card from "@/components/Card.vue";
 
 export default {
   name: "App",
   components: {
     CustomParticles,
-    PersonalInfo
+    Card,
   },
 };
 </script>
 
 <style lang="scss">
-#app { 
+.container {
+  @include flexCenter();
+}
+
+#app {
   height: 100%;
   overflow-y: scroll;
 }
