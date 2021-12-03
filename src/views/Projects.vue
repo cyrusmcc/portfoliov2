@@ -47,7 +47,7 @@ export default {
         {
           id: 1,
           title: "SuccyPlant",
-          img: "https://via.placeholder.com/150",
+          img: "https://via.placeholder.com/200",
           tags: [
             {
               id: 1,
@@ -74,7 +74,7 @@ export default {
         {
           id: 2,
           title: "nmtrails",
-          img: "https://via.placeholder.com/150",
+          img: "https://via.placeholder.com/200",
           tags: [
             {
               id: 1,
@@ -101,7 +101,7 @@ export default {
         {
           id: 3,
           title: "Portfolio",
-          img: "https://via.placeholder.com/150",
+          img: "https://via.placeholder.com/200",
           tags: [
             {
               id: 1,
@@ -169,7 +169,7 @@ li {
 }
 .projectImage {
   width: 100%;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
 }
 .projectInfoContainer {
@@ -185,6 +185,11 @@ li {
   color: $primaryLight;
   border-bottom: 2px solid $primaryColor;
 }
+
+.projectTitle:hover {
+  border-bottom: 3px solid $primaryHighlight;
+}
+
 .projectTagList {
   display: flex;
   flex-wrap: wrap;
