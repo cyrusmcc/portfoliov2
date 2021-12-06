@@ -13,6 +13,7 @@
           class="repoButton"
           target="_blank"
           rel="noopener noreferrer"
+          v-if="repoUrl"
           :href="repoUrl"
           >Github repo</a
         >

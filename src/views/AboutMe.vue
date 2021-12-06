@@ -22,15 +22,15 @@
         Hello! My name is Cyrus and I am studying Computer Science and Economics
         at the University of New Mexico. I am a creative at heart and software
         development is my creative outlet of choice. Having the ability to turn
-        concepts into well-polished software products is beautiful and I take
-        pride in my passion for building. I am focused on web development and my
-        skills range across a full stack. I use relational databases alongside
-        the Java and Spring ecosystems to build my backends as well as the JS
-        and Vue.js ecosystems for my clients. When I am not occupied with school
-        or side projects I like to spend my time outdoors hiking and skiing as
-        well as playing games with friends online. Scifi shows and novels, iced
-        tea, and capybara gifs are simple pleasures that make me happy.</span
-      >
+        concepts and ideas into well-polished software products is something I
+        take pride in and is driven by my passion for building. I am focused on
+        web development and my skills range across a full stack. I use
+        relational databases alongside the Java and Spring ecosystems to build
+        my backends as well as the JS and Vue.js ecosystems for my clients. When
+        I am not occupied with school or side projects I like to spend my time
+        outdoors hiking and watching sci-fi shows. Iced tea and capybara gifs
+        are simple pleasures that make me happy.&lrm;
+      </span>
     </div>
   </div>
 </template>
@@ -59,6 +59,7 @@ export default {
   width: 80%;
   border-bottom: 2px solid $primaryLight;
   padding-bottom: 15px;
+  margin-top: 15px;
 }
 .skillLabel {
   font-size: 1.5rem;
@@ -91,11 +92,16 @@ export default {
   overflow: hidden;
   direction: rtl;
   box-shadow: $shadowLight;
-  font-size: 0.9rem;
 }
 .desc > span {
   padding: 10px;
   overflow-y: scroll;
   height: inherit;
+}
+
+@include screen-md() {
+  .desc {
+    max-height: 18rem;
+  }
 }
 </style>
