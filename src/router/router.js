@@ -3,6 +3,10 @@ import Home from "../views/Home.vue";
 
 const AboutMe = () => import("../views/AboutMe.vue");
 const Projects = () => import("../views/Projects.vue");
+const SuccyPlant = () => import("../views/SuccyPlant.vue");
+const NMTrails = () => import("../views/NMTrails.vue");
+const PortfolioProject = () => import("../views/PortfolioProject.vue");
+
 
 const routes = [
   {
@@ -19,6 +23,24 @@ const routes = [
     path: "/projects",
     name: "Projects",
     component: Projects,
+  },
+  {
+    path: "/p/succyPlant",
+    name: "SuccyPlant",
+
+    component: SuccyPlant,
+  },
+  {
+    path: "/p/nmtrails",
+    name: "NMTrails",
+
+    component: NMTrails,
+  },
+  {
+    path: "/p/portfolio",
+    name: "PortfolioProject",
+
+    component: PortfolioProject,
   },
 ];
 

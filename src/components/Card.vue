@@ -31,7 +31,6 @@ export default {
   width: 95%;
   border-radius: 4px;
   overflow: hidden;
-  pointer-events: none;
   box-shadow: $shadow;
 }
 
@@ -63,7 +62,7 @@ export default {
 
 @include screen-md() {
   .cardWrapper {
-    height: 38rem;
+    height: 50rem;
     width: 38rem;
   }
 }

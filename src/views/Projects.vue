@@ -1,20 +1,19 @@
 <template>
   <div class="projects">
     <router-link to="/" class="homeButton">Home</router-link>
-    <span>**WIP**</span>
     <ol class="projectList">
       <li v-for="(project, index) in projects" :key="index">
         <div class="projectContainer">
           <img
             class="projectImage"
-            :src="project.img"
+            :src="require('../assets/imgs/' + project.imageUrl + '')"
             alt="project image"
             onload="this.style.display='block'"
           />
           <div class="projectInfoContainer">
-            <div>
-              <a class="projectTitle">{{ project.title }}</a>
-            </div>
+            <router-link :to="'/p/' + project.title" class="projectTitle">{{
+              project.title
+            }}</router-link>
             <ol class="projectTagList">
               <li
                 v-for="(tag, index) in project.tags"
@@ -47,7 +46,7 @@ export default {
         {
           id: 1,
           title: "SuccyPlant",
-          img: "https://via.placeholder.com/200",
+          imageUrl: "succyplant.webp",
           tags: [
             {
               id: 1,
@@ -74,7 +73,7 @@ export default {
         {
           id: 2,
           title: "nmtrails",
-          img: "https://via.placeholder.com/200",
+          imageUrl: "nmtrails.webp",
           tags: [
             {
               id: 1,
@@ -101,7 +100,7 @@ export default {
         {
           id: 3,
           title: "Portfolio",
-          img: "https://via.placeholder.com/200",
+          imageUrl: "portfolio.webp",
           tags: [
             {
               id: 1,
@@ -139,7 +138,6 @@ li {
   align-items: center;
   height: 100%;
   width: 100%;
-  pointer-events: all;
 }
 .projectList {
   display: flex;
@@ -164,7 +162,7 @@ li {
 .projectContainer {
   @include flexCenter();
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   height: fit-content;
 }
 .projectImage {
@@ -180,7 +178,9 @@ li {
   margin: 5px 0 10px 0;
 }
 .projectTitle {
+  width: fit-content;
   font-size: 1.5rem;
+  margin-bottom: 5px;
   font-style: italic;
   color: $primaryLight;
   border-bottom: 2px solid $primaryColor;

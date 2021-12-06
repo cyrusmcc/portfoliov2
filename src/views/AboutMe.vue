@@ -95,7 +95,6 @@ export default {
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
-  pointer-events: all;
   border: thin solid $primaryLight;
   border-radius: 4px;
   box-shadow: $shadowLight;

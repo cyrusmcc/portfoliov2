@@ -51,6 +51,7 @@ body {
     position: relative;
     box-sizing: border-box;
     font-family: $spacegrotesk;
+    overflow-x: hidden;
 }
 
 h2 {
@@ -59,7 +60,7 @@ h2 {
 
 a {
     cursor: pointer;
-    color: $primaryDark;
+    color: $primaryLight;
     text-decoration: none;
 }
 
@@ -95,7 +96,6 @@ th {
     top: 0;
     left: 0;
     margin: 15px;
-    pointer-events: all;
     cursor: pointer;
     background: none;
     color: $primaryLight;

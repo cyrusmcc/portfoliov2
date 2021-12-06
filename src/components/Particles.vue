@@ -143,7 +143,7 @@ canvas {
 
 #tsparticles {
   position: absolute;
-  width: 100%;
+  width: 102%;
   height: 100%;
   background: black url("../assets/imgs/noisytexture.png") repeat;
 }
