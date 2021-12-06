@@ -19,6 +19,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Space Grotesk", sans-serif;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -27,7 +28,7 @@ h2 {
 
 a {
   cursor: pointer;
-  color: #121113;
+  color: #f4f4f3;
   text-decoration: none;
 }
 
@@ -56,5 +57,40 @@ th {
 
 .container {
   height: 100%;
+}
+
+.homeButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 15px;
+  cursor: pointer;
+  background: none;
+  color: #f4f4f3;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid #e98f17;
+  border-left: none;
+  padding: 3px;
+  font-size: 1rem;
+}
+
+.homeButton:hover {
+  border-bottom: 3px solid #e7b314;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  width: 2px;
+  background-color: none;
+  border-radius: 4px;
+  direction: ltr;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  border-left: none;
+  border-radius: 4px;
+  direction: ltr;
+  background: linear-gradient(330deg, #e7b614, #ea7519, #d10e32, #88289f, #28b0bd, #ef7891, #83b341);
+  background-size: 200% 200%;
 }
 /*# sourceMappingURL=global.css.map */

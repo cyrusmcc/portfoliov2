@@ -111,3 +111,17 @@ th {
     border-bottom: 3px solid $primaryHighlight;
 }
 
+// SCROLL BAR
+.scrollContainer::-webkit-scrollbar {
+    width: 2px;
+    background-color: none;
+    border-radius: 4px;
+    direction: ltr;
+}
+.scrollContainer::-webkit-scrollbar-thumb {
+    border-left: none;
+    border-radius: 4px;
+    direction: ltr;
+    background: linear-gradient(330deg, #e7b614, #ea7519, #d10e32, #88289f, #28b0bd, #ef7891, #83b341);
+    background-size: 200% 200%;
+}

@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="desc">
-      <span>
+      <span class="scrollContainer">
         Hello! My name is Cyrus and I am studying Computer Science and Economics
         at the University of New Mexico. I am a creative at heart and software
         development is my creative outlet of choice. Having the ability to turn
@@ -49,64 +49,53 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 20px;
+  row-gap: 15px;
   align-items: center;
   height: 100%;
   width: 100%;
 }
-
 .skills {
   @include flexCenter();
   width: 80%;
+  border-bottom: 2px solid $primaryLight;
+  padding-bottom: 15px;
 }
-
 .skillLabel {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 .skillIcons {
   display: flex;
   flex-direction: column;
   width: 80%;
   row-gap: 20px;
 }
-
 .skillIcons > div {
   display: flex;
   justify-content: space-around;
   width: 100%;
 }
-
 .skillIcons > .beIcons > img,
 .skillIcons > .feIcons > img {
   height: auto;
   width: 2rem;
   align-self: center;
 }
-
 .desc {
   max-height: 14rem;
   width: 90%;
   display: flex;
   justify-content: flex-start;
   text-align: center;
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  border: thin solid $primaryLight;
-  border-radius: 4px;
+  overflow: hidden;
+  direction: rtl;
   box-shadow: $shadowLight;
   font-size: 0.9rem;
 }
-
-.desc::-webkit-scrollbar {
-  height: 0;
-  width: 0;
-}
-
 .desc > span {
   padding: 10px;
+  overflow-y: scroll;
+  height: inherit;
 }
 </style>
