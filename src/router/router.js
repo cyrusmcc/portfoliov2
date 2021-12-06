@@ -5,6 +5,7 @@ const AboutMe = () => import("../views/AboutMe.vue");
 const Projects = () => import("../views/Projects.vue");
 const SuccyPlant = () => import("../views/SuccyPlant.vue");
 const NMTrails = () => import("../views/NMTrails.vue");
+const Journal = () => import("../views/ProductivityApp.vue");
 const PortfolioProject = () => import("../views/PortfolioProject.vue");
 
 
@@ -35,6 +36,12 @@ const routes = [
     name: "NMTrails",
 
     component: NMTrails,
+  },
+  {
+    path: "/p/journal",
+    name: "ProductivityApp",
+
+    component: Journal,
   },
   {
     path: "/p/portfolio",

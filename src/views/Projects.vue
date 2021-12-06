@@ -99,6 +99,33 @@ export default {
         },
         {
           id: 3,
+          title: "Journal",
+          imageUrl: "productivity.webp",
+          tags: [
+            {
+              id: 1,
+              color: colorOne,
+              value: "Full Stack",
+            },
+            {
+              id: 1,
+              color: colorTwo,
+              value: "Spring",
+            },
+            {
+              id: 1,
+              color: colorThree,
+              value: "JavaScript",
+            },
+            {
+              id: 2,
+              color: colorFour,
+              value: "MySQL",
+            },
+          ],
+        },
+        {
+          id: 4,
           title: "Portfolio",
           imageUrl: "portfolio.webp",
           tags: [
