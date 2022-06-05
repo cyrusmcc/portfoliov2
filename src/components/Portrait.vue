@@ -1,11 +1,7 @@
 <template>
   <div class="portraitWrapper">
     <img class="blob" src="@/assets/imgs/blob.svg" alt="blob accent" />
-    <img
-      class="portrait"
-      src="@/assets/imgs/portrait.webp"
-      alt="Portrait of me"
-    />
+    <img class="portrait" src="@/assets/imgs/portrait.jpg" alt="Portrait of me" />
   </div>
 </template>
 
