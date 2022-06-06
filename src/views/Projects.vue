@@ -4,22 +4,14 @@
     <ol class="projectList">
       <li v-for="(project, index) in projects" :key="index">
         <div class="projectContainer">
-          <img
-            class="projectImage"
-            :src="require('../assets/imgs/' + project.imageUrl + '')"
-            alt="project image"
-            onload="this.style.display='block'"
-          />
+          <img class="projectImage" :src="require('../assets/imgs/' + project.imageUrl + '')" alt="project image"
+            onload="this.style.display='block'" />
           <div class="projectInfoContainer">
             <router-link :to="'/p/' + project.title" class="projectTitle">{{
-              project.title
+                project.title
             }}</router-link>
             <ol class="projectTagList">
-              <li
-                v-for="(tag, index) in project.tags"
-                :key="index"
-                :style="{ background: tag.color }"
-              >
+              <li v-for="(tag, index) in project.tags" :key="index" :style="{ background: tag.color }">
                 <div class="projectTag">
                   {{ tag.value }}
                 </div>
@@ -46,7 +38,7 @@ export default {
         {
           id: 1,
           title: "SuccyPlant",
-          imageUrl: "succyplant.webp",
+          imageUrl: "plant.png",
           tags: [
             {
               id: 1,
@@ -158,6 +150,7 @@ li {
   list-style: none;
   padding: 0;
 }
+
 .projects {
   display: flex;
   flex-direction: column;
@@ -166,6 +159,7 @@ li {
   height: 100%;
   width: 100%;
 }
+
 .projectList {
   display: flex;
   flex-direction: column;
@@ -174,29 +168,36 @@ li {
   height: 90%;
   margin: 0;
   overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
 }
+
 .projectList::-webkit-scrollbar {
   height: 0;
   width: 0;
 }
-.projectList > li {
+
+.projectList>li {
   @include flexCenter();
   width: 100%;
   box-shadow: $shadowLight;
 }
+
 .projectContainer {
   @include flexCenter();
   width: 100%;
   margin-bottom: 20px;
   height: fit-content;
 }
+
 .projectImage {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
+
 .projectInfoContainer {
   width: 95%;
   display: flex;
@@ -204,6 +205,7 @@ li {
   row-gap: 10px;
   margin: 5px 0 10px 0;
 }
+
 .projectTitle {
   width: fit-content;
   font-size: 1.5rem;
@@ -224,7 +226,8 @@ li {
   column-gap: 10px;
   row-gap: 10px;
 }
-.projectTagList > li {
+
+.projectTagList>li {
   font-weight: bold;
   font-size: 0.9rem;
   color: #09090a;

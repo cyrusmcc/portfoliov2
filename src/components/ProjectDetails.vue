@@ -9,32 +9,21 @@
 
           <span class="date">{{ date }}</span>
         </div>
-        <a
-          class="repoButton"
-          target="_blank"
-          rel="noopener noreferrer"
-          v-if="repoUrl"
-          :href="repoUrl"
-          >Github repo</a
-        >
+        <a class="repoButton" target="_blank" rel="noopener noreferrer" v-if="repoUrl" :href="repoUrl">Github repo</a>
       </header>
       <div class="projectDetails">
         <div class="projectImageContainer">
-          <img
-            class="projectImage"
-            :src="require('@/assets/imgs/' + imageUrl + '')"
-            alt="project image"
-          />
+          <carousel :images="images" :autoplay="true" :arrows="true" v-if="images && !imageUrl" />
+
+          <img class="projectImage" :src="require('@/assets/imgs/' + imageUrl + '')" alt="project image"
+            v-if="imageUrl && !images" />
         </div>
         <div class="projectTechnologies">
           <span>Technologies used</span>
           <ol>
             <li v-for="(tech, index) in technologies" :key="index">
-              <img
-                :src="require('@/assets/imgs/skills/' + tech + '')"
-                alt="tech image"
-                onload="this.style.display='block'"
-              />
+              <img :src="require('@/assets/imgs/skills/' + tech + '')" alt="tech image"
+                onload="this.style.display='block'" />
             </li>
           </ol>
         </div>
@@ -47,8 +36,13 @@
 </template>
 
 <script>
+import Carousel from "@/components/Carousel.vue";
+
 export default {
   name: "ProjectDetails",
+  components: {
+    Carousel,
+  },
   props: {
     title: {
       type: String,
@@ -60,7 +54,11 @@ export default {
     },
     imageUrl: {
       type: String,
-      required: true,
+      required: false,
+    },
+    images: {
+      type: Array,
+      required: false,
     },
     description: {
       type: String,
@@ -86,21 +84,25 @@ header {
   row-gap: 10px;
   margin-bottom: 20px;
 }
+
 .headerInfo {
   display: flex;
   flex-direction: row;
   column-gap: 10px;
   align-items: center;
 }
+
 .repoButton {
   border: thin solid $primaryColor;
   color: $primaryLight;
   padding: 2px 5px;
   border-radius: 5px;
 }
+
 .repoButton:hover {
   border: thin solid $primaryHighlight;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -109,6 +111,7 @@ header {
   width: 100%;
   height: 100%;
 }
+
 .project {
   display: flex;
   flex-direction: column;
@@ -117,10 +120,12 @@ header {
   width: 95%;
   height: 91%;
 }
+
 .title {
   font-style: italic;
   font-size: 1.2rem;
 }
+
 .dot {
   height: 5px;
   width: 5px;
@@ -128,6 +133,7 @@ header {
   border-radius: 50%;
   display: inline-block;
 }
+
 .projectImageContainer {
   display: flex;
   align-items: center;
@@ -136,11 +142,13 @@ header {
   width: 100%;
   margin-bottom: 10px;
 }
+
 .projectImage {
   height: 400px;
   object-fit: contain;
   width: 100%;
 }
+
 .projectTechnologies {
   display: flex;
   flex-direction: column;
@@ -150,7 +158,8 @@ header {
   height: fit-content;
   border-bottom: 2px solid $primaryLight;
 }
-.projectTechnologies > ol {
+
+.projectTechnologies>ol {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -161,17 +170,22 @@ header {
   padding: 0;
   width: 100%;
 }
-.projectTechnologies > ol > li > img {
+
+.projectTechnologies>ol>li>img {
   height: auto;
   width: 2rem;
   align-self: center;
 }
+
 .projectDetails {
   text-align: center;
   overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
 }
+
 .projectDetails::-webkit-scrollbar {
   height: 0;
   width: 0;
